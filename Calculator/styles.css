@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #333;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: url('ggg.gif');
+    background-size: cover;
+    color: #39ff14; /* Neon green text color */
+}
+.card {
+    perspective: 1000px;
+}
+.card-inner {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+    box-shadow: 15px 15px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #39ff14; /* Neon green text color */
+}
+.card-back {
+    transform: rotateY(180deg);
+}
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 90%;
+    height: 90%;
+}
+.calculator button, #display {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    color: #39ff14; /* Neon green text color */
+}
+#display {
+    grid-column: span 4;
+    text-align: right;
+    background-color: #222;
+    color: #39ff14; /* Neon green text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: #fff 0.3px solid;
+}
+.calculator button {
+    background-color: #555; /* Grey button color */
+    color: #39ff14; /* Neon green text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.startButton {
+    background-color: #555; /* Grey button color */
+    color: #39ff14; /* Neon green text color */
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.startButton:hover {
+    background-color: #666; /* Slightly lighter grey */
+    color: #39ff14; /* Neon green text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.calculator button:hover {
+    background-color: #666; /* Slightly lighter grey */
+    transform: scale(1.05);
+}
+.calculator button:active {
+    background-color: #777; /* Even lighter grey */
+}
+.calculator button:nth-child(4n+1),
+.calculator button:nth-child(4n+2),
+.calculator button:nth-child(4n+3),
+.calculator button:nth-child(4n+4) {
+    background-color: #555; /* Grey button color */
+}
+.calculator button:nth-child(4n+1):hover,
+.calculator button:nth-child(4n+2):hover,
+.calculator button:nth-child(4n+3):hover,
+.calculator button:nth-child(4n+4):hover {
+    background-color: #666; /* Slightly lighter grey */
+}
+.calculator button:nth-child(4n+1):active,
+.calculator button:nth-child(4n+2):active,
+.calculator button:nth-child(4n+3):active,
+.calculator button:nth-child(4n+4):active {
+    background-color: #777; /* Even lighter grey */
+}
